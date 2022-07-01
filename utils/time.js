@@ -11,7 +11,7 @@ export function handleTime(dataTime) {
 	return obj
 }
 
-export function UseCountDown(callback, delay) {
+export function useCountDown(callback, delay) {
 	const savedCallback = useRef();
 
   useEffect(() => {

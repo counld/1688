@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import Block from './block';
 import moment from 'moment';
-import resize from '../utils/felxible';
+import resize from '../utils/flexible';
 import './app.css';
 
 function App() {
