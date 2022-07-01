@@ -12,9 +12,8 @@ export default function Block(props) {
 					}
 	},1000)
 	return (
-		<div>
-			距结束&nbsp;<span className="shop-time-block">{handleTime(restTime).HH}</span>:			<span className="shop-time-block">{handleTime(restTime).MM}</span>:
-			<span className="shop-time-block">{handleTime(currentTime).ss}</span>
-		</div>
+		<>
+			距结束 &nbsp;<span className="shop-time-block">{handleTime(currentTime).HH}</span> : <span className="shop-time-block">{handleTime(currentTime).MM}</span> : <span className="shop-time-block">{handleTime(currentTime).ss}</span>
+		</>
 	)
 }

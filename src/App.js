@@ -1,10 +1,16 @@
 import React, { useEffect, useState} from 'react';
 import Block from './block';
 import moment from 'moment';
+import Resize from '../utils/felxible';
 import './app.css';
 
 function App() {
-	const [data, setData] = useState([])
+	const [data, setData] = useState([]);
+	useEffect(() => {
+		Resize();
+		window.addEventListener('resize',Resize)
+		return () => window.removeEventListener('resize',Resize);
+	},)
   useEffect(() => {
     fetch('https://systemjs.1688.com/krump/schema/1352.json')
       .then((response) => {
@@ -28,7 +34,7 @@ function App() {
 							<div className='shop-description-des'>{item.description}</div>
 							<div className='shop-time' >{
 								item.restTime ? <Block restTime={item.restTime}/>: 
-								<div>有效期：{`${moment(item.time[0]).format("MM.DD HH:hh")}--${moment(item.time[1]).format("MM.DD HH:hh")}`}</div>
+								<div>有效期:{`${moment(item.time[0]).format("MM.DD HH:hh")}-${moment(item.time[1]).format("MM.DD HH:hh")}`}</div>
 							}</div>
 					</div>
 					<div className='shop-status'>{item.status}</div>
