@@ -1,15 +1,15 @@
 import React, { useEffect, useState} from 'react';
 import Block from './block';
 import moment from 'moment';
-import Resize from '../utils/felxible';
+import resize from '../utils/felxible';
 import './app.css';
 
 function App() {
 	const [data, setData] = useState([]);
 	useEffect(() => {
-		Resize();
-		window.addEventListener('resize',Resize)
-		return () => window.removeEventListener('resize',Resize);
+		resize();
+		window.addEventListener('resize',resize)
+		return () => window.removeEventListener('resize',resize);
 	},)
   useEffect(() => {
     fetch('https://systemjs.1688.com/krump/schema/1352.json')

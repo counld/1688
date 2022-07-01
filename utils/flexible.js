@@ -1,4 +1,4 @@
-export default function Resize() {
+export default function resize() {
 	var deviceWidth =
 		document.documentElement.clientWidth || window.innerWidth;
 	if (deviceWidth >= 750) {

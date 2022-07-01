@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { handleTime, UseCountDown } from "../../utils/time";
+import { handleTime, useCountDown } from "../../utils/time";
 import './block.css';
 
 export default function Block(props) {
 	const { restTime } = props;
 	const [currentTime, setCurrentTime] = useState(restTime);
 
-	UseCountDown(function callback(){
+	useCountDown(function callback(){
 					if (currentTime > 0) {
 						setCurrentTime(currentTime - 1);
 					}
